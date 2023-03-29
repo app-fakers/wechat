@@ -7,18 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62D7697B29D47F220084738E /* wechatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7697A29D47F220084738E /* wechatApp.swift */; };
+		62D7697B29D47F220084738E /* WechatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7697A29D47F220084738E /* WechatApp.swift */; };
 		62D7697D29D47F220084738E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7697C29D47F220084738E /* ContentView.swift */; };
 		62D7697F29D47F240084738E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62D7697E29D47F240084738E /* Assets.xcassets */; };
 		62D7698229D47F240084738E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62D7698129D47F240084738E /* Preview Assets.xcassets */; };
+		62D7698929D4813B0084738E /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7698829D4813B0084738E /* RecentView.swift */; };
+		62D7698B29D481770084738E /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7698A29D481770084738E /* ContactsView.swift */; };
+		62D7698D29D483820084738E /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7698C29D483820084738E /* DiscoveryView.swift */; };
+		62D7699329D483EF0084738E /* MineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7699229D483EF0084738E /* MineView.swift */; };
+		62D7699529D490B60084738E /* RecentMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7699429D490B60084738E /* RecentMessageView.swift */; };
+		62D7699729D490E70084738E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7699629D490E70084738E /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		62D7697729D47F220084738E /* wechat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wechat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		62D7697A29D47F220084738E /* wechatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wechatApp.swift; sourceTree = "<group>"; };
+		62D7697A29D47F220084738E /* WechatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WechatApp.swift; sourceTree = "<group>"; };
 		62D7697C29D47F220084738E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		62D7697E29D47F240084738E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62D7698129D47F240084738E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		62D7698829D4813B0084738E /* RecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
+		62D7698A29D481770084738E /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		62D7698C29D483820084738E /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
+		62D7699229D483EF0084738E /* MineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineView.swift; sourceTree = "<group>"; };
+		62D7699429D490B60084738E /* RecentMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessageView.swift; sourceTree = "<group>"; };
+		62D7699629D490E70084738E /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +63,12 @@
 		62D7697929D47F220084738E /* wechat */ = {
 			isa = PBXGroup;
 			children = (
-				62D7697A29D47F220084738E /* wechatApp.swift */,
+				62D7699829D490EE0084738E /* data */,
+				62D7699129D483E20084738E /* mine */,
+				62D7699029D483D40084738E /* discovery */,
+				62D7698F29D483C40084738E /* contacts */,
+				62D7698E29D483B00084738E /* recent */,
+				62D7697A29D47F220084738E /* WechatApp.swift */,
 				62D7697C29D47F220084738E /* ContentView.swift */,
 				62D7697E29D47F240084738E /* Assets.xcassets */,
 				62D7698029D47F240084738E /* Preview Content */,
@@ -65,6 +82,47 @@
 				62D7698129D47F240084738E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		62D7698E29D483B00084738E /* recent */ = {
+			isa = PBXGroup;
+			children = (
+				62D7698829D4813B0084738E /* RecentView.swift */,
+				62D7699429D490B60084738E /* RecentMessageView.swift */,
+			);
+			path = recent;
+			sourceTree = "<group>";
+		};
+		62D7698F29D483C40084738E /* contacts */ = {
+			isa = PBXGroup;
+			children = (
+				62D7698A29D481770084738E /* ContactsView.swift */,
+			);
+			path = contacts;
+			sourceTree = "<group>";
+		};
+		62D7699029D483D40084738E /* discovery */ = {
+			isa = PBXGroup;
+			children = (
+				62D7698C29D483820084738E /* DiscoveryView.swift */,
+			);
+			path = discovery;
+			sourceTree = "<group>";
+		};
+		62D7699129D483E20084738E /* mine */ = {
+			isa = PBXGroup;
+			children = (
+				62D7699229D483EF0084738E /* MineView.swift */,
+			);
+			path = mine;
+			sourceTree = "<group>";
+		};
+		62D7699829D490EE0084738E /* data */ = {
+			isa = PBXGroup;
+			children = (
+				62D7699629D490E70084738E /* Data.swift */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +195,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62D7699529D490B60084738E /* RecentMessageView.swift in Sources */,
 				62D7697D29D47F220084738E /* ContentView.swift in Sources */,
-				62D7697B29D47F220084738E /* wechatApp.swift in Sources */,
+				62D7699329D483EF0084738E /* MineView.swift in Sources */,
+				62D7698929D4813B0084738E /* RecentView.swift in Sources */,
+				62D7697B29D47F220084738E /* WechatApp.swift in Sources */,
+				62D7698B29D481770084738E /* ContactsView.swift in Sources */,
+				62D7698D29D483820084738E /* DiscoveryView.swift in Sources */,
+				62D7699729D490E70084738E /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +334,8 @@
 				DEVELOPMENT_TEAM = 63NX88Y82Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "微信";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +365,8 @@
 				DEVELOPMENT_TEAM = 63NX88Y82Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "微信";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
