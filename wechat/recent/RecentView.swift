@@ -44,8 +44,7 @@ struct RecentView: View {
                 isPopover = true
             } label: {
                 Image(systemName: "plus.circle")
-                    .foregroundColor(.black
-                    )
+                    .foregroundColor(.black)
             }
             .popover(isPresented: $isPopover) {
                 VStack{
