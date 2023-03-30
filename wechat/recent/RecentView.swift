@@ -18,7 +18,7 @@ struct RecentView: View {
                     .focused($isSearchFoucsed)
                     .padding()
                     .background{
-                        Color.gray.opacity(0.2)
+                        Color.gray.opacity(0.1)
                     }
                     .cornerRadius(6)
                     .padding(.horizontal)
@@ -35,7 +35,12 @@ struct RecentView: View {
             }
             ForEach(recentMessages){item in
                 RecentMessageView(message: item)
-                    .padding(.vertical)
+                    .padding(.top, 4)
+                    .background {
+                        if item.onTop{
+                            Color.gray.opacity(0.1)
+                        }
+                    }
             }
             Spacer()
         }

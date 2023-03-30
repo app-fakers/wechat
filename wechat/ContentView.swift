@@ -10,46 +10,55 @@ import SwiftUI
 struct ContentView: View {
     @State var selectedView = 0
     var body: some View {
-        NavigationStack {
-            TabView(selection: $selectedView){
+        TabView(selection: $selectedView){
+            NavigationStack {
                 RecentView()
-                    .tabItem {
-                        VStack{
-                            Image(systemName: "message")
-                            Text("微信")
-                        }
-                    }
-                    .tag(0)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarTitle(title)
+            }
+            .tabItem {
+                VStack{
+                    Image(systemName: "message")
+                    Text("微信")
+                }
+            }
+            .tag(0)
+            
+            NavigationStack {
                 ContactsView()
-                    .tabItem {
-                        VStack{
-                            Image(systemName: "person.wave.2")
-                            Text("通讯录")
-                        }
-                    }
-                    .tag(1)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarTitle(title)
+            }
+            .tabItem {
+                VStack{
+                    Image(systemName: "person.wave.2")
+                    Text("通讯录")
+                }
+            }
+            .tag(1)
+            NavigationStack {
                 DiscoveryView()
-                    .tabItem{
-                        VStack{
-                            Image(systemName: "safari")
-                            Text("发现")
-                        }
-                    }
-                    .tag(2)
+            }
+            .tabItem{
+                VStack{
+                    Image(systemName: "safari")
+                    Text("发现")
+                }
+            }
+            .tag(2)
+            NavigationStack{
                 MineView()
-                    .tabItem {
-                        VStack{
-                            Image(systemName: "person")
-                            Text("我")
-                        }
-                    }
-                    .tag(3)
             }
-            .background {
-                Color.gray
+            .tabItem {
+                VStack{
+                    Image(systemName: "person")
+                    Text("我")
+                }
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarTitle(title)
+            .tag(3)
+        }
+        .background {
+            Color.gray
         }
     }
     

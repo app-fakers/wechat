@@ -11,29 +11,29 @@ struct RecentMessageView: View {
     var message: RecentMessage
     var body: some View {
         HStack{
-            Image(systemName: message.cover)
-                .foregroundColor(.red.opacity(0.5))
-                .font(.largeTitle)
-                .background{
-                    Rectangle()
-                        .frame(width: 60, height: 60)
-                        .cornerRadius(6)
-                        .foregroundColor(.gray.opacity(0.3))
-                }
-                .padding(.horizontal)
+            AvatarView()
             VStack{
                 HStack{
                     Text(message.title)
                         .font(.title2)
                     Spacer()
-                    Text(message.date.formatted())
+                    Text(message.date)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
                 }
                 HStack{
                     Text(message.recentMessage)
                         .font(.subheadline)
                         .foregroundColor(.gray)
                     Spacer()
+                    if message.mutex{
+                        Image(systemName: "bell.slash")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                    }
                 }
+                Divider()
+                    .padding(.bottom, 0)
             }
         }
     }
@@ -41,6 +41,6 @@ struct RecentMessageView: View {
 
 struct RecentMessageView_Previews: PreviewProvider {
     static var previews: some View {
-        RecentMessageView(message: RecentMessage(title: "和谐一家亲", recentMessage: "网络一线牵", cover: "video.fill.badge.plus"))
+        RecentMessageView(message: RecentMessage(title: "铁路12306", recentMessage: "网络一线牵", date: "7:23", cover: "video.fill.badge.plus",mutex: true))
     }
 }

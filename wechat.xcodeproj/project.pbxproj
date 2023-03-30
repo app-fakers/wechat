@@ -17,6 +17,9 @@
 		62D7699329D483EF0084738E /* MineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7699229D483EF0084738E /* MineView.swift */; };
 		62D7699529D490B60084738E /* RecentMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7699429D490B60084738E /* RecentMessageView.swift */; };
 		62D7699729D490E70084738E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7699629D490E70084738E /* Data.swift */; };
+		62D7699A29D514B90084738E /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7699929D514B90084738E /* AvatarView.swift */; };
+		62D7699F29D553E00084738E /* DefaultAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7699E29D553E00084738E /* DefaultAvatarView.swift */; };
+		62D769A129D558570084738E /* ContactsCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D769A029D558570084738E /* ContactsCategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		62D7699229D483EF0084738E /* MineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineView.swift; sourceTree = "<group>"; };
 		62D7699429D490B60084738E /* RecentMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessageView.swift; sourceTree = "<group>"; };
 		62D7699629D490E70084738E /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		62D7699929D514B90084738E /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		62D7699E29D553E00084738E /* DefaultAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAvatarView.swift; sourceTree = "<group>"; };
+		62D769A029D558570084738E /* ContactsCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 		62D7697929D47F220084738E /* wechat */ = {
 			isa = PBXGroup;
 			children = (
+				62D7699D29D553CB0084738E /* common */,
 				62D7699829D490EE0084738E /* data */,
 				62D7699129D483E20084738E /* mine */,
 				62D7699029D483D40084738E /* discovery */,
@@ -89,6 +96,7 @@
 			children = (
 				62D7698829D4813B0084738E /* RecentView.swift */,
 				62D7699429D490B60084738E /* RecentMessageView.swift */,
+				62D7699929D514B90084738E /* AvatarView.swift */,
 			);
 			path = recent;
 			sourceTree = "<group>";
@@ -97,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				62D7698A29D481770084738E /* ContactsView.swift */,
+				62D769A029D558570084738E /* ContactsCategoryView.swift */,
 			);
 			path = contacts;
 			sourceTree = "<group>";
@@ -123,6 +132,14 @@
 				62D7699629D490E70084738E /* Data.swift */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		62D7699D29D553CB0084738E /* common */ = {
+			isa = PBXGroup;
+			children = (
+				62D7699E29D553E00084738E /* DefaultAvatarView.swift */,
+			);
+			path = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +216,12 @@
 				62D7697D29D47F220084738E /* ContentView.swift in Sources */,
 				62D7699329D483EF0084738E /* MineView.swift in Sources */,
 				62D7698929D4813B0084738E /* RecentView.swift in Sources */,
+				62D769A129D558570084738E /* ContactsCategoryView.swift in Sources */,
 				62D7697B29D47F220084738E /* WechatApp.swift in Sources */,
 				62D7698B29D481770084738E /* ContactsView.swift in Sources */,
 				62D7698D29D483820084738E /* DiscoveryView.swift in Sources */,
+				62D7699A29D514B90084738E /* AvatarView.swift in Sources */,
+				62D7699F29D553E00084738E /* DefaultAvatarView.swift in Sources */,
 				62D7699729D490E70084738E /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
