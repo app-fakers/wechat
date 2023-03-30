@@ -10,8 +10,8 @@ import SwiftUI
 struct AssetsAvatarView: View {
     var name : String
     var color : Color
-    var width: CGFloat = 60
-    var height: CGFloat = 60
+    var width: CGFloat = 50
+    var height: CGFloat = 50
     var padding: CGFloat = 8
     var body: some View {
         Image(name)
@@ -44,8 +44,8 @@ struct DefaultAvatarView_Previews: PreviewProvider {
 struct SystemAvatarView: View{
     var name : String
     var color : Color
-    var width: CGFloat = 60
-    var height: CGFloat = 60
+    var width: CGFloat = 50
+    var height: CGFloat = 50
     var padding: CGFloat = 8
     var body: some View {
         Image(systemName: name)
