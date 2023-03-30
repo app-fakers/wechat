@@ -13,7 +13,7 @@ struct ContactsCategoryView: View {
     var title: String
     var body: some View {
         HStack{
-            SystemAvatarView(name: avatarName,color: color,width: 45,height: 45)
+            SystemAvatarView(name: avatarName,color: color)
                 .foregroundColor(.white)
             Text(title).font(.title3)
             Spacer()

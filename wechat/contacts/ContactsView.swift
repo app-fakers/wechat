@@ -16,7 +16,7 @@ struct ContactsView: View {
             HStack{
                 TextField("搜索",text: $searchText)
                     .focused($isSearchFoucsed)
-                    .padding()
+                    .padding(10)
                     .background{
                         Color.gray.opacity(0.1)
                     }

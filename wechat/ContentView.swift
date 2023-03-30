@@ -11,10 +11,15 @@ struct ContentView: View {
     @State var selectedView = 0
     var body: some View {
         TabView(selection: $selectedView){
-            NavigationStack {
+            NavigationSplitView {
                 RecentView()
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarTitle(title)
+                    .background {
+                        Color.yellow
+                    }
+            } detail: {
+                Text("聊天详情")
             }
             .tabItem {
                 VStack{
@@ -24,10 +29,12 @@ struct ContentView: View {
             }
             .tag(0)
             
-            NavigationStack {
+            NavigationSplitView {
                 ContactsView()
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarTitle(title)
+            } detail: {
+                Text("聊天详情")
             }
             .tabItem {
                 VStack{
@@ -36,8 +43,10 @@ struct ContentView: View {
                 }
             }
             .tag(1)
-            NavigationStack {
+            NavigationSplitView {
                 DiscoveryView()
+            } detail: {
+                Text("聊天详情")
             }
             .tabItem{
                 VStack{
@@ -46,8 +55,10 @@ struct ContentView: View {
                 }
             }
             .tag(2)
-            NavigationStack{
+            NavigationSplitView{
                 MineView()
+            } detail: {
+                Text("聊天详情")
             }
             .tabItem {
                 VStack{

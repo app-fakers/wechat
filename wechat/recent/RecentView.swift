@@ -12,16 +12,16 @@ struct RecentView: View {
     @State var searchText = ""
     @FocusState var isSearchFoucsed
     var body: some View {
-        ScrollView(showsIndicators: false){
+        List{
             HStack{
                 TextField("搜索",text: $searchText)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal)
                     .focused($isSearchFoucsed)
-                    .padding()
                     .background{
-                        Color.gray.opacity(0.1)
+                        Color.white.opacity(0.7)
                     }
                     .cornerRadius(6)
-                    .padding(.horizontal)
                     .animation(.easeInOut, value: isSearchFoucsed)
                 if isSearchFoucsed{
                     Button {
@@ -33,17 +33,47 @@ struct RecentView: View {
 
                 }
             }
+            .padding(.horizontal)
+            .padding(.vertical, 3)
+            .listRowInsets(EdgeInsets())
+            .background {
+                Color.gray.opacity(0.1)
+            }
+//            .listRowInsets(EdgeInsets())//重点在这句话
             ForEach(recentMessages){item in
                 RecentMessageView(message: item)
-                    .padding(.top, 4)
-                    .background {
+                    .padding(.horizontal)
+                    .padding(.vertical, 10)
+                    .background(content: {
                         if item.onTop{
                             Color.gray.opacity(0.1)
                         }
+                    })
+                    .swipeActions(edge: .trailing) {
+                        Button(role: .destructive) {
+                        } label: {
+                            Label("删除", systemImage: "")
+                        }
+                        .tint(.red)
+                        Button {} label: {
+                            Label("不显示", systemImage: "")
+                                .background {
+                                    Color.yellow
+                                }
+                        }
+                        .tint(.orange)
+                        Button {} label: {
+                            Label("标为已读", systemImage: "")
+                                .background {
+                                    Color.yellow
+                                }
+                        }
+                        .tint(.blue)
                     }
+                    .listRowInsets(EdgeInsets())
             }
-            Spacer()
         }
+        .listStyle(.inset)
         .toolbar {
             Button {
                 isPopover = true
