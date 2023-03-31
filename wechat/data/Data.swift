@@ -29,6 +29,8 @@ var recentMessages: [RecentMessage] = [
 struct RecentMessage: Identifiable{
     var id = UUID().uuidString
     var title : String
+    var avatarIndex = Int.random(in: 0...9)
+    var avatarColorIndex = Int.random(in: 0...9)
     var recentMessage : String
     var date : String
     var cover : String

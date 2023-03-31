@@ -20,6 +20,7 @@
 		62D7699A29D514B90084738E /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7699929D514B90084738E /* AvatarView.swift */; };
 		62D7699F29D553E00084738E /* DefaultAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7699E29D553E00084738E /* DefaultAvatarView.swift */; };
 		62D769A129D558570084738E /* ContactsCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D769A029D558570084738E /* ContactsCategoryView.swift */; };
+		62FE721529D66EAE00B37397 /* OnlineDevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE721429D66EAE00B37397 /* OnlineDevicesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		62D7699929D514B90084738E /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		62D7699E29D553E00084738E /* DefaultAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAvatarView.swift; sourceTree = "<group>"; };
 		62D769A029D558570084738E /* ContactsCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCategoryView.swift; sourceTree = "<group>"; };
+		62FE721429D66EAE00B37397 /* OnlineDevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineDevicesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				62D7698829D4813B0084738E /* RecentView.swift */,
 				62D7699429D490B60084738E /* RecentMessageView.swift */,
 				62D7699929D514B90084738E /* AvatarView.swift */,
+				62FE721429D66EAE00B37397 /* OnlineDevicesView.swift */,
 			);
 			path = recent;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				62D7699329D483EF0084738E /* MineView.swift in Sources */,
 				62D7698929D4813B0084738E /* RecentView.swift in Sources */,
 				62D769A129D558570084738E /* ContactsCategoryView.swift in Sources */,
+				62FE721529D66EAE00B37397 /* OnlineDevicesView.swift in Sources */,
 				62D7697B29D47F220084738E /* WechatApp.swift in Sources */,
 				62D7698B29D481770084738E /* ContactsView.swift in Sources */,
 				62D7698D29D483820084738E /* DiscoveryView.swift in Sources */,

@@ -11,35 +11,50 @@ struct RecentView: View {
     @State var isPopover = false
     @State var searchText = ""
     @FocusState var isSearchFoucsed
+    @State var isOnlineShow = false
     var body: some View {
         List{
-            HStack{
-                TextField("搜索",text: $searchText)
-                    .padding(.vertical, 10)
-                    .padding(.horizontal)
-                    .focused($isSearchFoucsed)
-                    .background{
-                        Color.white.opacity(0.7)
-                    }
-                    .cornerRadius(6)
-                    .animation(.easeInOut, value: isSearchFoucsed)
-                if isSearchFoucsed{
-                    Button {
-                        isSearchFoucsed = false
-                    } label: {
-                        Text("取消")
+            Section {
+                VStack {
+                    HStack{
+                        TextField("搜索",text: $searchText)
+                            .padding(.vertical, 10)
+                            .padding(.horizontal)
+                            .focused($isSearchFoucsed)
+                            .background{
+                                Color.white.opacity(0.7)
+                            }
+                            .cornerRadius(6)
                             .animation(.easeInOut, value: isSearchFoucsed)
-                    }
+                        if isSearchFoucsed{
+                            Button {
+                                isSearchFoucsed = false
+                            } label: {
+                                Text("取消")
+                                    .animation(.easeInOut, value: isSearchFoucsed)
+                            }
 
+                        }
+                    }
+                    ZStack {
+                        HStack{
+                            Image(systemName: "macbook.and.iphone")
+                            Text("已在其他2个设备上登录微信")
+                                .font(.subheadline)
+                            Spacer()
+                        }
+                        .onTapGesture(perform: {
+                            isOnlineShow = true
+                        })
+                    }
                 }
             }
             .padding(.horizontal)
             .padding(.vertical, 3)
-            .listRowInsets(EdgeInsets())
             .background {
                 Color.gray.opacity(0.1)
             }
-//            .listRowInsets(EdgeInsets())//重点在这句话
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 1, trailing: 0))//重点在这句话
             ForEach(recentMessages){item in
                 RecentMessageView(message: item)
                     .padding(.horizontal)
@@ -71,6 +86,11 @@ struct RecentView: View {
                         .tint(.blue)
                     }
                     .listRowInsets(EdgeInsets())
+            }
+        }
+        .sheet(isPresented: $isOnlineShow) {
+            NavigationView {
+                OnlineDevicesView()
             }
         }
         .listStyle(.inset)

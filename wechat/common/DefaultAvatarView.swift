@@ -22,7 +22,6 @@ struct AssetsAvatarView: View {
             .font(.largeTitle)
             .background{
                 Rectangle()
-                    .frame(width: width, height: height)
                     .cornerRadius(6)
                     .foregroundColor(color.opacity(0.3))
             }
@@ -55,7 +54,6 @@ struct SystemAvatarView: View{
             .font(.largeTitle)
             .background{
                 Rectangle()
-                    .frame(width: width, height: height)
                     .cornerRadius(6)
                     .foregroundColor(color)
             }

@@ -10,8 +10,10 @@ import SwiftUI
 struct AvatarView: View {
     var avatarIndex = Int.random(in: 0...9)
     var avatarColorIndex = Int.random(in: 0...9)
+    var avatarWidth: CGFloat = 40
+    var avatarHeight: CGFloat = 40
     var body: some View {
-        AssetsAvatarView(name: "avatar\(avatarIndex)", color: Color("avatar_color\(avatarColorIndex)"))
+        AssetsAvatarView(name: "avatar\(avatarIndex)", color: Color("avatar_color\(avatarColorIndex)"), width: avatarWidth, height: avatarHeight)
     }
 }
 
