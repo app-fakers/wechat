@@ -7,28 +7,35 @@
 
 import Foundation
 
-var recentMessages: [RecentMessage] = [
-    RecentMessage(title:"实时公交",recentMessage:"公交线路查询",date: "7:32", cover:"bus.doubledecker", onTop: true),
-    RecentMessage(title:"铁路12306",recentMessage:"成功订票",date: "7:32", cover:"train.side.front.car", onTop: true),
-    RecentMessage(title:"实时公交",recentMessage:"公交线路查询",date: "7:32", cover:"bus.doubledecker", onTop: true),
-    RecentMessage(title:"铁路12306",recentMessage:"成功订票",date: "7:32", cover:"train.side.front.car", mutex: true),
-    RecentMessage(title:"实时公交",recentMessage:"公交线路查询",date: "7:32", cover:"bus.doubledecker", mutex: true),
-    RecentMessage(title:"铁路12306",recentMessage:"成功订票",date: "7:32", cover:"train.side.front.car", mutex: true),
-    RecentMessage(title:"实时公交",recentMessage:"公交线路查询",date: "昨天", cover:"bus.doubledecker"),
-    RecentMessage(title:"铁路12306",recentMessage:"成功订票",date: "昨天", cover:"train.side.front.car"),
-    RecentMessage(title:"实时公交",recentMessage:"公交线路查询",date: "前天", cover:"bus.doubledecker"),
-    RecentMessage(title:"铁路12306",recentMessage:"成功订票",date: "前天", cover:"train.side.front.car"),
-    RecentMessage(title:"实时公交",recentMessage:"公交线路查询",date: "前天", cover:"bus.doubledecker"),
-    RecentMessage(title:"铁路12306",recentMessage:"成功订票",date: "星期一", cover:"train.side.front.car"),
-    RecentMessage(title:"实时公交",recentMessage:"公交线路查询",date: "星期一", cover:"bus.doubledecker"),
-    RecentMessage(title:"铁路12306",recentMessage:"成功订票",date: "3-21", cover:"train.side.front.car"),
-    RecentMessage(title:"实时公交",recentMessage:"公交线路查询",date: "3-20", cover:"bus.doubledecker"),
-    RecentMessage(title:"铁路12306",recentMessage:"成功订票",date: "1-23", cover:"train.side.front.car"),
-]
+
+
+class Db: ObservableObject{
+    @Published var recentMessages: [RecentMessage] = [
+        RecentMessage(title:"爱学术",pinyin:"AIXUESHU",recentMessage:"文章查询",date: "7:32", cover:"bus.doubledecker", onTop: true),
+        RecentMessage(title:"Apple",pinyin:"APPLE",recentMessage:"iOS17发布",date: "7:32", cover:"bus.doubledecker", onTop: true),
+        RecentMessage(title:"锤子科技",pinyin:"CHUIZIKEJI",recentMessage:"锤子T3新品发布会",date: "7:32", cover:"train.side.front.car", onTop: true),
+        RecentMessage(title:"IT之家",pinyin:"ITZHIJIA",recentMessage:"iOS17发布",date: "7:32", cover:"bus.doubledecker", onTop: true),
+        RecentMessage(title:"孔夫子旧书网",pinyin:"KONGFUZHIJIUSHUWANG",recentMessage:"购书成功",date: "7:32", cover:"train.side.front.car", mutex: true),
+        RecentMessage(title:"SeaTable",pinyin:"SEATABLE",recentMessage:"使用教程",date: "7:32", cover:"bus.doubledecker", mutex: true),
+        RecentMessage(title:"铁路12306",pinyin:"TIELU12306",recentMessage:"成功订票",date: "7:32", cover:"train.side.front.car", mutex: true),
+        RecentMessage(title:"四川省图书馆",pinyin:"SICHUANSHENGTUSHUGUAN",recentMessage:"入馆预定",date: "昨天", cover:"bus.doubledecker"),
+        RecentMessage(title:"微信运动",pinyin:"WEIXINYUNDONG",recentMessage:"昨日微信步数排行第一",date: "昨天", cover:"train.side.front.car"),
+        RecentMessage(title:"微信支付",pinyin:"WEIXINZHIFU",recentMessage:"",date: "前天", cover:"bus.doubledecker"),
+        RecentMessage(title:"中国移动",pinyin:"ZHONGGUOYIDONG",recentMessage:"当前余额:欠费0.01",date: "前天", cover:"train.side.front.car"),
+        RecentMessage(title:"实时公交",pinyin:"SHISHIGONGJIAO",recentMessage:"公交线路查询",date: "前天", cover:"bus.doubledecker"),
+        RecentMessage(title:"重庆移动",pinyin:"CHOGNQIYIDONG",recentMessage:"当前余额:欠费0.01",date: "星期一", cover:"train.side.front.car"),
+        RecentMessage(title:"中国联通",pinyin:"ZHONGGUOLIANTONG",recentMessage:"当前套餐:哔哩哔哩22卡",date: "星期一", cover:"bus.doubledecker"),
+        RecentMessage(title:"中国石化",pinyin:"ZHONGGUOSHIHUA",recentMessage:"",date: "3-21", cover:"train.side.front.car"),
+        RecentMessage(title:"腾讯企业邮箱",pinyin:"TENGXUNQIYEYOUXIANG",recentMessage:"[新邮件]提醒",date: "3-20", cover:"bus.doubledecker"),
+        RecentMessage(title:"腾讯视频",pinyin:"TENGXUNSHIP",recentMessage:"会员过期",date: "1-23", cover:"train.side.front.car"),
+    ]
+
+}
 
 struct RecentMessage: Identifiable{
     var id = UUID().uuidString
     var title : String
+    var pinyin: String
     var avatarIndex = Int.random(in: 0...9)
     var avatarColorIndex = Int.random(in: 0...9)
     var recentMessage : String

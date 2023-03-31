@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var db = Db()
     @State var selectedView = 0
     var body: some View {
         TabView(selection: $selectedView){
             NavigationSplitView {
                 RecentView()
+                    .environmentObject(db)
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarTitle(title)
                     .background {
@@ -31,6 +33,7 @@ struct ContentView: View {
             
             NavigationSplitView {
                 ContactsView()
+                    .environmentObject(db)
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarTitle(title)
             } detail: {

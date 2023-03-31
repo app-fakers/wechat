@@ -8,11 +8,27 @@
 import SwiftUI
 
 struct ContactsView: View {
+    @EnvironmentObject var db: Db
     @State var isPopover = false
     @State var searchText = ""
     @FocusState var isSearchFoucsed
+    let letters = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    
+    func groupedBy(charater: Character) -> [RecentMessage]{
+        return db.recentMessages.filter{$0.pinyin.hasPrefix(charater.uppercased())}
+    }
+    
+    func hasContactsGroup(charater: Character) -> Bool{
+        for recent in db.recentMessages {
+            if recent.pinyin.uppercased().hasPrefix(charater.uppercased()) {
+                return true
+            }
+        }
+        return false
+    }
+    
     var body: some View {
-        ScrollView(showsIndicators: false){
+        List{
             HStack{
                 TextField("搜索",text: $searchText)
                     .focused($isSearchFoucsed)
@@ -41,7 +57,24 @@ struct ContactsView: View {
                 ContactsCategoryView(avatarName: "person.text.rectangle.fill", color: Color(hex: "2778E4"), title: "公众号")
                 ContactsCategoryView(avatarName: "person.crop.square.filled.and.at.rectangle.fill", color: Color(hex: "3176CB"), title: "企业微信联系人")
             }
+            ForEach(letters, id: \.self) { letter in
+                if hasContactsGroup(charater: letter){
+                    Section {
+                        ForEach(groupedBy(charater: letter)){item in
+                            ContactsItemView(avatarName: "avatar\(item.avatarIndex)", color: Color("avatar_color\(item.avatarColorIndex)"), title: item.title)
+                        }
+                    } header: {
+                        HStack{
+                            Text(String(letter))
+                                .foregroundColor(.gray)
+                            Spacer()
+                        }
+                        .padding(.horizontal)
+                    }
+                }
+            }
         }
+        .listStyle(.inset)
         .toolbar {
             Button {
                 isPopover = true

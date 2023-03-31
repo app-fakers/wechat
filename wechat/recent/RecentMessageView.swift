@@ -39,7 +39,7 @@ struct RecentMessageView: View {
 
 struct RecentMessageView_Previews: PreviewProvider {
     static var previews: some View {
-        RecentMessageView(message: RecentMessage(title: "铁路", recentMessage: "最近消息", date: "7:23", cover: "video.fill.badge.plus", mutex: true))
+        RecentMessageView(message: RecentMessage(title: "铁路12306",pinyin: "", recentMessage: "最近消息", date: "7:23", cover: "video.fill.badge.plus", mutex: true))
             .padding()
     }
 }

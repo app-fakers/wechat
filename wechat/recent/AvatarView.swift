@@ -19,6 +19,6 @@ struct AvatarView: View {
 
 struct AvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        RecentMessageView(message: RecentMessage(title: "和谐一家亲", recentMessage: "网络一线牵", date: "7:23", cover: "video.fill.badge.plus"))
+        RecentMessageView(message: RecentMessage(title: "铁路12306",pinyin: "", recentMessage: "购票成功", date: "7:23", cover: "video.fill.badge.plus"))
     }
 }

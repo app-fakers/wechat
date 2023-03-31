@@ -57,7 +57,6 @@ struct SystemAvatarView: View{
                     .cornerRadius(6)
                     .foregroundColor(color)
             }
-            .padding(.leading)
     }
 }
 

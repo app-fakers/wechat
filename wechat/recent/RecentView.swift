@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RecentView: View {
+    @EnvironmentObject var db: Db
     @State var isPopover = false
     @State var searchText = ""
     @FocusState var isSearchFoucsed
@@ -55,7 +56,7 @@ struct RecentView: View {
                 Color.gray.opacity(0.1)
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 1, trailing: 0))//重点在这句话
-            ForEach(recentMessages){item in
+            ForEach(db.recentMessages){item in
                 RecentMessageView(message: item)
                     .padding(.horizontal)
                     .padding(.vertical, 10)
