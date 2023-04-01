@@ -37,17 +37,8 @@ struct RecentView: View {
 
                         }
                     }
-                    ZStack {
-                        HStack{
-                            Image(systemName: "macbook.and.iphone")
-                            Text("已在其他2个设备上登录微信")
-                                .font(.subheadline)
-                            Spacer()
-                        }
-                        .onTapGesture(perform: {
-                            isOnlineShow = true
-                        })
-                    }
+                    OnlineDeviceStatusView(isOnlineShow: $isOnlineShow)
+                        .padding(.vertical, 10)
                 }
             }
             .padding(.horizontal)
@@ -115,5 +106,6 @@ struct RecentView: View {
 struct RecentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Db())
     }
 }

@@ -83,6 +83,23 @@ struct OnlineDevicesView: View {
     }
 }
 
+struct OnlineDeviceStatusView: View{
+    @Binding var isOnlineShow: Bool
+    var body: some View{
+        ZStack {
+            HStack{
+                Image(systemName: "macbook.and.iphone")
+                Text("已在其他2个设备上登录微信")
+                    .font(.subheadline)
+                Spacer()
+            }
+            .onTapGesture(perform: {
+                isOnlineShow = true
+            })
+        }
+    }
+}
+
 struct OnlineDeviceAction: View{
     var icon: String
     var name: String
