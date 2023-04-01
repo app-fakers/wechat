@@ -15,7 +15,9 @@ struct ContactsView: View {
     let letters = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     
     func groupedBy(charater: Character) -> [RecentMessage]{
-        return db.recentMessages.filter{$0.pinyin.hasPrefix(charater.uppercased())}
+        return db.recentMessages
+            .filter{$0.pinyin.hasPrefix(charater.uppercased())}
+            .sorted { $0.pinyin < $1.pinyin }
     }
     
     func hasContactsGroup(charater: Character) -> Bool{
@@ -31,13 +33,13 @@ struct ContactsView: View {
         List{
             HStack{
                 TextField("搜索",text: $searchText)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal)
                     .focused($isSearchFoucsed)
-                    .padding(10)
                     .background{
                         Color.gray.opacity(0.1)
                     }
                     .cornerRadius(6)
-                    .padding(.horizontal)
                     .animation(.easeInOut, value: isSearchFoucsed)
                 if isSearchFoucsed{
                     Button {
@@ -49,6 +51,9 @@ struct ContactsView: View {
 
                 }
             }
+            .padding(.horizontal)
+            .listRowInsets(EdgeInsets())
+            
             VStack{
                 ContactsCategoryView(avatarName: "person.fill.badge.plus", color: Color(hex: "ED9541"), title: "新的朋友")
                 ContactsCategoryView(avatarName: "message.and.waveform.fill", color: Color(hex: "ED9541"), title: "仅聊天的朋友")

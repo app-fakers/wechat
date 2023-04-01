@@ -37,10 +37,12 @@ struct RecentView: View {
 
                         }
                     }
+                    .padding(.top, 10)
                     OnlineDeviceStatusView(isOnlineShow: $isOnlineShow)
                         .padding(.vertical, 10)
                 }
             }
+            .listRowInsets(EdgeInsets())
             .padding(.horizontal)
             .padding(.vertical, 3)
             .background {
@@ -56,7 +58,7 @@ struct RecentView: View {
                             Color.gray.opacity(0.1)
                         }
                     })
-                    .swipeActions(edge: .trailing) {
+                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                         Button(role: .destructive) {
                         } label: {
                             Label("删除", systemImage: "")
