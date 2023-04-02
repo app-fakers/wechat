@@ -11,68 +11,68 @@ struct ContentView: View {
     @StateObject var db = Db()
     @State var selectedView = 0
     var body: some View {
-        TabView(selection: $selectedView){
-            NavigationSplitView {
-                RecentView()
-                    .environmentObject(db)
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarTitle(title)
-                    .background {
-                        Color.yellow
+        NavigationStack {
+            NavigationView {
+                TabView(selection: $selectedView){
+                    RecentView()
+                        .environmentObject(db)
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarTitle(title)
+                        .background {
+                            Color.yellow
+                        }
+                        .tabItem {
+                            VStack{
+                                Image(systemName: "message")
+                                Text("微信")
+                            }
+                        }
+                        .tag(0)
+                    
+                    NavigationSplitView {
+                        ContactsView()
+                            .environmentObject(db)
+                            .navigationBarTitleDisplayMode(.inline)
+                            .navigationBarTitle(title)
+                    } detail: {
+                        Text("聊天详情")
                     }
-            } detail: {
-                Text("聊天详情")
-            }
-            .tabItem {
-                VStack{
-                    Image(systemName: "message")
-                    Text("微信")
+                    .tabItem {
+                        VStack{
+                            Image(systemName: "person.wave.2")
+                            Text("通讯录")
+                        }
+                    }
+                    .tag(1)
+                    NavigationSplitView {
+                        DiscoveryView()
+                    } detail: {
+                        Text("聊天详情")
+                    }
+                    .tabItem{
+                        VStack{
+                            Image(systemName: "safari")
+                            Text("发现")
+                        }
+                    }
+                    .tag(2)
+                    NavigationSplitView{
+                        MineView()
+                    } detail: {
+                        Text("聊天详情")
+                    }
+                    .tabItem {
+                        VStack{
+                            Image(systemName: "person")
+                            Text("我")
+                        }
+                    }
+                    .tag(3)
                 }
+                .background {
+                    Color.gray
             }
-            .tag(0)
-            
-            NavigationSplitView {
-                ContactsView()
-                    .environmentObject(db)
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarTitle(title)
-            } detail: {
-                Text("聊天详情")
             }
-            .tabItem {
-                VStack{
-                    Image(systemName: "person.wave.2")
-                    Text("通讯录")
-                }
-            }
-            .tag(1)
-            NavigationSplitView {
-                DiscoveryView()
-            } detail: {
-                Text("聊天详情")
-            }
-            .tabItem{
-                VStack{
-                    Image(systemName: "safari")
-                    Text("发现")
-                }
-            }
-            .tag(2)
-            NavigationSplitView{
-                MineView()
-            } detail: {
-                Text("聊天详情")
-            }
-            .tabItem {
-                VStack{
-                    Image(systemName: "person")
-                    Text("我")
-                }
-            }
-            .tag(3)
-        }
-        .background {
-            Color.gray
         }
     }
     

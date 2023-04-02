@@ -50,36 +50,7 @@ struct RecentView: View {
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 1, trailing: 0))//重点在这句话
             ForEach(db.recentMessages){item in
-                RecentMessageView(message: item)
-                    .padding(.horizontal)
-                    .padding(.vertical, 10)
-                    .background(content: {
-                        if item.onTop{
-                            Color.gray.opacity(0.1)
-                        }
-                    })
-                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                        Button(role: .destructive) {
-                        } label: {
-                            Label("删除", systemImage: "")
-                        }
-                        .tint(.red)
-                        Button {} label: {
-                            Label("不显示", systemImage: "")
-                                .background {
-                                    Color.yellow
-                                }
-                        }
-                        .tint(.orange)
-                        Button {} label: {
-                            Label("标为已读", systemImage: "")
-                                .background {
-                                    Color.yellow
-                                }
-                        }
-                        .tint(.blue)
-                    }
-                    .listRowInsets(EdgeInsets())
+                MessageItemVie(item: item)
             }
         }
         .sheet(isPresented: $isOnlineShow) {
@@ -102,6 +73,42 @@ struct RecentView: View {
             }
 
         }
+    }
+    
+    func MessageItemVie(item: RecentMessage) -> some View {
+        ZStack {
+            RecentMessageView(message: item)
+            NavigationLink(destination: Text("详情"), label: {}).opacity(0)
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 10)
+        .background(content: {
+            if item.onTop{
+                Color.gray.opacity(0.1)
+            }
+        })
+        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+            Button(role: .destructive) {
+            } label: {
+                Text("删除")
+            }
+            .tint(.red)
+            Button {} label: {
+                Text("不显示")
+                    .background {
+                        Color.yellow
+                    }
+            }
+            .tint(.orange)
+            Button {} label: {
+                Text("标为已读")
+                    .background {
+                        Color.yellow
+                    }
+            }
+            .tint(.blue)
+        }
+        .listRowInsets(EdgeInsets())
     }
 }
 
