@@ -12,6 +12,14 @@ struct RecentMessageView: View {
     var body: some View {
         HStack{
             AvatarView(avatarIndex: message.avatarIndex, avatarColorIndex: message.avatarColorIndex, avatarWidth: 46, avatarHeight: 46)
+                .overlay(alignment: .topTrailing) {
+                    if message.notified {
+                        Circle()
+                            .frame(width: 10,height: 10)
+                            .foregroundColor(.red)
+                            .offset(x: 3, y: -3)
+                    }
+                }
             VStack{
                 HStack{
                     Text(message.title)

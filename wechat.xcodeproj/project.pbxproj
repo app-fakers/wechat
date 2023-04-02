@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6272B01A29D831BC005717F0 /* OnlineDeviceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B01929D831BC005717F0 /* OnlineDeviceStatusView.swift */; };
+		6272B01C29D9CC17005717F0 /* RecentMessageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B01B29D9CC17005717F0 /* RecentMessageDetailView.swift */; };
 		62D7697B29D47F220084738E /* WechatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7697A29D47F220084738E /* WechatApp.swift */; };
 		62D7697D29D47F220084738E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7697C29D47F220084738E /* ContentView.swift */; };
 		62D7697F29D47F240084738E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62D7697E29D47F240084738E /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		6272B01929D831BC005717F0 /* OnlineDeviceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineDeviceStatusView.swift; sourceTree = "<group>"; };
+		6272B01B29D9CC17005717F0 /* RecentMessageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessageDetailView.swift; sourceTree = "<group>"; };
 		62D7697729D47F220084738E /* wechat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wechat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62D7697A29D47F220084738E /* WechatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WechatApp.swift; sourceTree = "<group>"; };
 		62D7697C29D47F220084738E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				62D7699929D514B90084738E /* AvatarView.swift */,
 				62FE721429D66EAE00B37397 /* OnlineDevicesView.swift */,
 				6272B01929D831BC005717F0 /* OnlineDeviceStatusView.swift */,
+				6272B01B29D9CC17005717F0 /* RecentMessageDetailView.swift */,
 			);
 			path = recent;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6272B01C29D9CC17005717F0 /* RecentMessageDetailView.swift in Sources */,
 				62D7699529D490B60084738E /* RecentMessageView.swift in Sources */,
 				62D7697D29D47F220084738E /* ContentView.swift in Sources */,
 				62D7699329D483EF0084738E /* MineView.swift in Sources */,

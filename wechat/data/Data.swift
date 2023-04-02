@@ -64,4 +64,5 @@ struct RecentMessage: Identifiable{
     var cover : String
     var onTop : Bool = false
     var mutex : Bool = false
+    var notified: Bool = Int.random(in: 0...9) < 3
 }

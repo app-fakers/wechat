@@ -12,66 +12,50 @@ struct ContentView: View {
     @State var selectedView = 0
     var body: some View {
         NavigationStack {
-            NavigationView {
-                TabView(selection: $selectedView){
+            TabView(selection: $selectedView){
+                NavigationView {
                     RecentView()
-                        .environmentObject(db)
+                        .navigationTitle("微信")
                         .navigationBarTitleDisplayMode(.inline)
-                        .navigationBarTitle(title)
-                        .background {
-                            Color.yellow
-                        }
-                        .tabItem {
-                            VStack{
-                                Image(systemName: "message")
-                                Text("微信")
-                            }
-                        }
-                        .tag(0)
-                    
-                    NavigationSplitView {
-                        ContactsView()
-                            .environmentObject(db)
-                            .navigationBarTitleDisplayMode(.inline)
-                            .navigationBarTitle(title)
-                    } detail: {
-                        Text("聊天详情")
-                    }
-                    .tabItem {
-                        VStack{
-                            Image(systemName: "person.wave.2")
-                            Text("通讯录")
-                        }
-                    }
-                    .tag(1)
-                    NavigationSplitView {
-                        DiscoveryView()
-                    } detail: {
-                        Text("聊天详情")
-                    }
-                    .tabItem{
-                        VStack{
-                            Image(systemName: "safari")
-                            Text("发现")
-                        }
-                    }
-                    .tag(2)
-                    NavigationSplitView{
-                        MineView()
-                    } detail: {
-                        Text("聊天详情")
-                    }
-                    .tabItem {
-                        VStack{
-                            Image(systemName: "person")
-                            Text("我")
-                        }
-                    }
-                    .tag(3)
+                        .environmentObject(db)
                 }
-                .background {
-                    Color.gray
+                .tabItem {
+                    Label("微信", systemImage: "message")
+//                    VStack{
+//                        Image(systemName: "message")
+//                        Text("微信")
+//                    }
+                }
+                .tag(0)
+                NavigationView {
+                    ContactsView()
+                        .navigationTitle("通讯录")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .environmentObject(db)
+                }
+                .tabItem {
+                    Label("通讯录", systemImage: "person.wave.2")
+                }
+                .tag(1)
+                
+                NavigationView {
+                    DiscoveryView()
+                }
+                .tabItem{
+                    Label("发现", systemImage: "safari")
+                }
+                .tag(2)
+                
+                NavigationView {
+                    MineView()
+                }
+                .tabItem {
+                    Label("我", systemImage: "person")
+                }
+                .tag(3)
             }
+            .background {
+                Color.gray.opacity(0.1)
             }
         }
     }
