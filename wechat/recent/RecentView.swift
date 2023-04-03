@@ -50,7 +50,9 @@ struct RecentView: View {
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 1, trailing: 0))//重点在这句话
             ForEach(db.recentMessages){item in
-                MessageItemVie(item: item)
+                if !item.hidden {
+                    MessageItemVie(item: item)
+                }
             }
         }
         .sheet(isPresented: $isOnlineShow) {
@@ -71,14 +73,16 @@ struct RecentView: View {
                     Text("添加")
                 }
             }
-
         }
     }
     
     func MessageItemVie(item: RecentMessage) -> some View {
         ZStack {
             RecentMessageView(message: item)
-            NavigationLink(destination: Text("详情"), label: {}).opacity(0)
+            NavigationLink(destination: Text("详情")
+                .onAppear{
+                    db.readed(target: item)
+                }, label: {}).opacity(0)
         }
         .padding(.horizontal)
         .padding(.vertical, 10)
@@ -89,18 +93,27 @@ struct RecentView: View {
         })
         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
             Button(role: .destructive) {
+                withAnimation(.spring()) {
+                    db.hidden(target: item)
+                }
             } label: {
                 Text("删除")
             }
             .tint(.red)
-            Button {} label: {
+            Button {
+                withAnimation(.spring()) {
+                    db.hidden(target: item)
+                }
+            } label: {
                 Text("不显示")
                     .background {
                         Color.yellow
                     }
             }
             .tint(.orange)
-            Button {} label: {
+            Button {
+                db.readed(target: item)
+            } label: {
                 Text("标为已读")
                     .background {
                         Color.yellow

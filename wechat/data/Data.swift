@@ -50,7 +50,18 @@ class Db: ObservableObject{
 //        RecentMessage(title:"腾讯企业邮箱",pinyin:"TENGXUNQIYEYOUXIANG",recentMessage:"[新邮件]提醒",date: "3-20", cover:"bus.doubledecker"),
 //        RecentMessage(title:"腾讯视频",pinyin:"TENGXUNSHIP",recentMessage:"会员过期",date: "1-23", cover:"train.side.front.car"),
     ]
-
+    
+    func readed(target: RecentMessage){
+        if let targetIndex = recentMessages.firstIndex(where: { $0.id == target.id }) {
+            recentMessages[targetIndex].notified = 0
+        }
+    }
+    
+    func hidden(target: RecentMessage){
+        if let targetIndex = recentMessages.firstIndex(where: { $0.id == target.id }) {
+            recentMessages[targetIndex].hidden = true
+        }
+    }
 }
 
 struct RecentMessage: Identifiable{
@@ -64,5 +75,7 @@ struct RecentMessage: Identifiable{
     var cover : String
     var onTop : Bool = false
     var mutex : Bool = false
-    var notified: Bool = Int.random(in: 0...9) < 3
+    var notified: Int = Int.random(in: -4...6)
+    
+    var hidden: Bool = false
 }
