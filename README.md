@@ -2,6 +2,8 @@
 
 wechat faker
 
-![Home](https://www.tangyujun.com/images/opensource/fakers/wechat/Home.png)
-![Contacts](https://www.tangyujun.com/images/opensource/fakers/wechat/Contacts.png)
-![OnlineDevices](https://www.tangyujun.com/images/opensource/fakers/wechat/OnlineDevice.png)
+![1](https://www.tangyujun.com/images/opensource/fakers/wechat/Home.png)
+![2](https://www.tangyujun.com/images/opensource/fakers/wechat/Contacts.png)
+![3](https://www.tangyujun.com/images/opensource/fakers/wechat/OnlineDevice.png)
+![4](https://www.tangyujun.com/images/opensource/fakers/wechat/Discovery.png)
+![5](https://www.tangyujun.com/images/opensource/fakers/wechat/Me.png)

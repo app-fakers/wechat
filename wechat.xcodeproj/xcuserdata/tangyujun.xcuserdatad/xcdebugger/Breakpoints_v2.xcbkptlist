@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "62277D88-B113-4BE2-A919-12B872B2B0DB"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "131D4754-B75C-4165-8256-615AAE4829D3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wechat/discovery/DiscoveryView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "131D4754-B75C-4165-8256-615AAE4829D3 - d905333125426627"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wechat.DiscoveryView.body.getter : some"
+                  moduleName = "wechat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tangyujun/workspace/app-fakers/wechat/wechat/discovery/DiscoveryView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  uuid = "131D4754-B75C-4165-8256-615AAE4829D3 - d905333125426627"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wechat.DiscoveryView.body.getter : some"
+                  moduleName = "wechat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tangyujun/workspace/app-fakers/wechat/wechat/discovery/DiscoveryView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "208">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

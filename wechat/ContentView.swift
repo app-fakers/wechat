@@ -40,6 +40,8 @@ struct ContentView: View {
                 
                 NavigationView {
                     DiscoveryView()
+                        .navigationTitle("发现")
+                        .navigationBarTitleDisplayMode(.inline)
                 }
                 .tabItem{
                     Label("发现", systemImage: "safari")
@@ -54,9 +56,11 @@ struct ContentView: View {
                 }
                 .tag(3)
             }
-            .background {
-                Color.gray.opacity(0.1)
-            }
+            .toolbarBackground(.visible, for: .tabBar)
+            .toolbarBackground(.ultraThinMaterial, for: .tabBar)
+//            .background {
+//                Color.white.opacity(0.1)
+//            }
         }
     }
     
