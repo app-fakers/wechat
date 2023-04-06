@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct DiscoveryView: View {
+    
+    @State var showMiniProgram = false
+    
     var body: some View{
         List {
             Section() {
@@ -30,10 +33,12 @@ struct DiscoveryView: View {
                     item("yaoyiyao", "摇一摇")
                 }
                 NavigationLink {
-                    Text("小程序")
+                    MiniProgramView()
+                        .navigationBarBackButtonHidden()
                 } label: {
                     item("xiaochengxu", "小程序")
                 }
+                .transition(.move(edge: .bottom))
             }
             
             

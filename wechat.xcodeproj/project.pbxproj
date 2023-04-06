@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		622ED31A29DBEE3500929102 /* MiniProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622ED31929DBEE3500929102 /* MiniProgramView.swift */; };
 		6272B01A29D831BC005717F0 /* OnlineDeviceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B01929D831BC005717F0 /* OnlineDeviceStatusView.swift */; };
 		6272B01C29D9CC17005717F0 /* RecentMessageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B01B29D9CC17005717F0 /* RecentMessageDetailView.swift */; };
 		62D7697B29D47F220084738E /* WechatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7697A29D47F220084738E /* WechatApp.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		622ED31929DBEE3500929102 /* MiniProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniProgramView.swift; sourceTree = "<group>"; };
 		6272B01929D831BC005717F0 /* OnlineDeviceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineDeviceStatusView.swift; sourceTree = "<group>"; };
 		6272B01B29D9CC17005717F0 /* RecentMessageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessageDetailView.swift; sourceTree = "<group>"; };
 		62D7697729D47F220084738E /* wechat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wechat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				62D7698C29D483820084738E /* DiscoveryView.swift */,
+				622ED31929DBEE3500929102 /* MiniProgramView.swift */,
 			);
 			path = discovery;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			files = (
 				6272B01C29D9CC17005717F0 /* RecentMessageDetailView.swift in Sources */,
 				62D7699529D490B60084738E /* RecentMessageView.swift in Sources */,
+				622ED31A29DBEE3500929102 /* MiniProgramView.swift in Sources */,
 				62D7697D29D47F220084738E /* ContentView.swift in Sources */,
 				62D7699329D483EF0084738E /* MineView.swift in Sources */,
 				62D7698929D4813B0084738E /* RecentView.swift in Sources */,

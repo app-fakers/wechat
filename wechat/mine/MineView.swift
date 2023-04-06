@@ -87,11 +87,10 @@ struct MineView: View {
                         .font(.caption)
                         .padding(.horizontal, 5)
                         .padding(.vertical, 2)
-                        .background(content: {
+                        .cornerRadius(6)
+                        .overlay(content: {
                             RoundedRectangle(cornerSize: .init(width: 20, height: 10))
-                                .stroke(style: .init(lineWidth: 1))
-                                .cornerRadius(6)
-                                .opacity(0.2)
+                                .stroke(.gray, lineWidth: 1)
                         })
                 }
             }
